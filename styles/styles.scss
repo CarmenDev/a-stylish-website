@@ -1,19 +1,36 @@
 @import "variables";
 
-.body {
-    font-family: monospace;
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .header {
-    background: url(/images/banner-landscape.jpg) center center no-repeat;
+    background: url(/images/banner-landscape.jpg) center center/cover no-repeat;
     position: relative;
     height: 90vh;
     display: block;
     color: $font-color;
 }
+.hamburger-menu {
+    display: flex;
+    float: right;
+    padding-right: 30px;
+}
+.menu {
+    padding-top: 10px;
+    padding-right: 12px;
+}
+.hamburger {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 6px;
+  }
 h1 {
-  position: absolute;
-  top: 400px;
-  left: 50px;
+    font-size: 50px;
+    position: absolute;
+    top: 400px;
+    left: 50px;
 }
 .header > p {
     position: absolute;
@@ -24,9 +41,10 @@ h1 {
     position: absolute;
     top: 515px;
     left: 450px;
-    background-color: black;
+    background-color: transparent;
     color: white;
     border: white 1px solid;
+    padding-bottom: 10px;
     
 }
 
@@ -44,43 +62,82 @@ h1 {
     height: 60vh;
 }
 .cell-aliquam {
-    background-color: turquoise;
-    opacity: 0.5;
+    background: url(/images/banner-person.jpg) center center/cover no-repeat;
     grid-row: 1/2;
     grid-column: 1/3;
+
+    .aliquam-text {
+        background-color: rgba(107, 197, 250, 0.7);
+        min-height: 100%;
+        font-size: 25px;
+    }
 }
 .cell-tempus {
-    background-color: violet;
-    opacity: 0.5;
+    background: url(/images/banner-city.jpg) center center / cover no-repeat;
     grid-row: 1/2;
     grid-column: 3/6;
+
+    .tempus-text {
+        background-color: rgba(233, 155, 243, 0.7);
+        min-height: 100%;
+        font-size: 25px;
+    }
 }
 .cell-magna {
-    background-color: salmon;
-    opacity: 0.5;
+    background: url(/images/banner-mountains.jpg) center center / cover no-repeat;
     grid-row: 2/3;
     grid-column: 1/4;
+
+    .magna-text {
+        background-color: rgba(250, 128, 114, 0.7);
+        min-height: 100%;
+        font-size: 25px;
+    }
 }
 .cell-ipsum {
-    background-color: goldenrod;
-    opacity: 0.5;
+    background: url(/images/banner-fox.jpg) center center/cover no-repeat;
     grid-row: 2/3;
     grid-column: 4/6;
+
+    .ipsum-text {
+        background-color: rgba(226, 157, 28, 0.7);
+        min-height: 100%;
+        font-size: 25px;
+    }
 }
 .cell-consequat {
-    background-color: indigo;
-    opacity: 0.5;
+    background: url(/images/banner-station.jpg) center center/cover no-repeat;
     grid-row: 3/4;
     grid-column: 1/3;
+
+    .consequat-text {
+        background-color: rgba(62, 94, 199, 0.7);
+        min-height: 100%;
+        font-size: 25px;
+    }
 }
 .cell-etiam {
-    background-color: green;
-    opacity: 0.5;
+    background: url(/images/banner-camera.jpg) center center/cover no-repeat;
     grid-row: 3/4;
     grid-column: 3/6;
+
+    .etiam-text {
+        background-color: rgba(59, 170, 83, 0.7);
+        min-height: 100%;
+        font-size: 25px;
+    }
 }
+.cell > img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+.aliquam-text, .tempus-text, .magna-text, .ipsum-text, .consequat-text, .etiam-text {
+    padding-left: 50px;
+}
+/*Footer*/
 .footer {
-    height: 90vh;
+    height: auto;
     background-color: $footer-dark;
     color: $font-color;
     display: grid;
@@ -89,16 +146,21 @@ h1 {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 .item-1 {
-    h2 {
-        text-decoration: underline;
-    }
     background-color: $footer-light;
     grid-row: 1/2;
     grid-column: 1/6;
     padding: 50px;
 }
+.item-1 {
+    .btn {
+        background-color: transparent;
+        color: white;
+        border: white 1px solid;
+        padding-bottom: 10px;
+    }
+}
 .item-2 {
-    grid-row: 2/4;
+    grid-row: 2/5;
     grid-column: 1/4;
     border: $footer-light 1px solid;
     padding: 20px 50px 20px 50px;
@@ -117,7 +179,7 @@ h1 {
 }
 .item-5 {
     grid-row: 4/5;
-    grid-column: 1/6;
+    grid-column: 4/6;
     border: $footer-light 1px solid;
     padding: 20px 50px 20px 50px;
 }
@@ -127,13 +189,110 @@ h1 {
     border: $footer-light 1px solid;
     padding: 20px 50px 20px 50px;
 }
+/*Icons*/
+.fa-envelope, .fa-phone, .fa-home, .fa-twitter, .fa-facebook-f, .fa-instagram, .fa-github, .fa-linkedin-in {
+    color: $footer-dark;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $footer-light;
+    background-color: $font-color;
+    border-radius: 50%;
+    padding: 10px;
+}
+/*Contact form*/
+.contact {
+    display: flex;
+}
+input[type=text] {
+    width: 40%;
+    padding: 5px;
+    border: none;
+    box-sizing: border-box;
+    background-color: $footer-light;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-left: -45px;
+    margin-right: 52px;
+}
+textarea {
+    width: 90%;
+    padding: 5px;
+    border: none;
+    box-sizing: border-box;
+    background-color: $footer-light;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.message {
+    background-color: white;
+    color: black;
+    border: white 1px solid;
+    padding: 10px;
+}
+.clear {
+    background-color: transparent;
+    color: white;
+    border: white 1px solid;
+    padding: 10px;
+    margin-left: 15px;
+}
+/*Tablet*/
+@media only screen and (max-width: 1037px) {
+    .header {
+        height: 40vh;
+    }
+    h1 {
+        position: absolute;
+        top: 100px;
+        left: 50px;
+    }
+    .header > .btn {
+         position: absolute;
+         top: 300px;
+         left: 50px;
+         background-color: transparent;
+         color: white;
+         border: white 1px solid;
+         padding-bottom: 10px;
+    }
+    .header > p {
+        position: absolute;
+        top: 200px;
+        left: 50px;
+    }
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+
+        .cell-aliquam, .cell-tempus, .cell-magna, .cell-ipsum, .cell-consequat, .cell-etiam {
+            width: 50%;
+        }
+    }
+    
+    .footer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }  
+}
 
 /*Mobile*/
 @media only screen and (max-width: 525px) {
+    .header {
+        height: auto;
+        width: auto;
+    }
+    .main {
+        height: auto;
 
-}
-
-/*Tablet*/
-@media only screen and (max-width: 1037px) {
-
+        .cell-aliquam, .cell-tempus, .cell-magna, .cell-ipsum, .cell-consequat, .cell-etiam {
+            width: 100%;
+        }
+    }
+    .header, .main, .footer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
 }
